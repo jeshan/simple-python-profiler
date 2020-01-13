@@ -2,9 +2,9 @@ FROM python:3.7-alpine
 
 WORKDIR /app
 
-#COPY Pipfile Ppipfile.lock ./
-
-RUN pip install flit recursive-decorator loguru
+RUN pip install pipenv
+COPY Pipfile Pipfile.lock ./
+RUN pipenv install --system
 
 COPY pyproject.toml README.md ./
 COPY simple_python_profiler simple_python_profiler
