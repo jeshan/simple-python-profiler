@@ -50,6 +50,13 @@ def top_level_function():
 
 ```
 
+# Releasing on PyPI
+- `pipenv shell`
+- `flit build`
+- `flit publish`
+
+Enter password when prompted.
+
 # TODO
 - option to include system packages
 
