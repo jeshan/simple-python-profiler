@@ -20,8 +20,6 @@ if __name__ == '__main__':
 
 This will decorate all your top-level functions in your modules. System (built-in) and pip-installed packages (those that go in `dist-packages`) are excluded.
 
-add examples with decorators.
-
 Since the default behaviour is to not include nested functions, you can profile your nested functions too as follows:
 
 ```python
