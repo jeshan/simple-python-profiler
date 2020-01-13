@@ -2,4 +2,6 @@
 
 __version__ = '0.1'
 
-from .main import profile, Profiler
+from .main import profile, profile_recursive, Profiler
+
+__all__ = ['profile', 'profile_recursive', 'Profiler']
