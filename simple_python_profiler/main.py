@@ -36,9 +36,9 @@ def sort_fn(invocation):
 def log_call(f):
     @functools.wraps(f)
     def wrapper(*args, **kwargs):
-        logger.info(f'Entering {f}')
+        logger.debug(f'Entering {f}')
         result = f(*args, **kwargs)
-        logger.info(f'Exiting {f}')
+        logger.debug(f'Exiting {f}')
 
         return result
 
@@ -177,7 +177,7 @@ def singleton(cls):
 @singleton
 class Profiler:
     def __init__(self):
-        print('creating instance of profiler')
+        logger.debug('creating instance of profiler')
         self.invocations = []
 
     def add_invocation(self, start, end, result, f):
@@ -187,10 +187,10 @@ class Profiler:
 
     def __enter__(self):
         bootstrap()
-        logger.info('Start recording invocations')
+        logger.debug('Start recording invocations')
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        logger.info(f'stopped recording invocations, got {len(self.invocations)} of them.')
+        logger.debug(f'stopped recording invocations, got {len(self.invocations)} of them.')
 
         invocation_group = group_by_function(self.invocations)
         by_time = sort_invocations_by_function_time(invocation_group)
