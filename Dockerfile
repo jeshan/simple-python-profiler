@@ -6,7 +6,7 @@ WORKDIR /app
 
 RUN pip install flit recursive-decorator loguru
 
-COPY pyproject.toml .
+COPY pyproject.toml README.md ./
 COPY simple_python_profiler simple_python_profiler
 
 
