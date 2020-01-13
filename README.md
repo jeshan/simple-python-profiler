@@ -51,7 +51,6 @@ def top_level_function():
 ```
 
 # TODO
-- direct invocation like `python -m simple_python_profiler your-script.py` does not currently work.
 - option to include system packages
 
 Released under the MIT licence. See file named LICENCE for details.

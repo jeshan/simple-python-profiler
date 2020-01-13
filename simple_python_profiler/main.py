@@ -268,8 +268,3 @@ def limit_results(groups):
 def print_results(by_time):
     for item in by_time:
         logger.info(fn_description(item[0]) + f',invoked={item[2]} times, total={item[1] / 1_000_000}ms')
-
-
-if __name__ == '__main__':
-    with Profiler.INSTANCE:
-        exec(sys.argv[1])
