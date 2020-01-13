@@ -12,23 +12,6 @@ def fn_description(f):
     return f'{f.__module__}.{f.__qualname__}'
 
 
-class Invocation:
-    def __init__(self, start, end, result, f, args, kwargs):
-        self.start = start
-        self.end = end
-        self.result = result
-        self.f = f
-        self.args = args
-        self.kwargs = kwargs
-
-    def __repr__(self):
-        return f'Invocation(duration={self.duration}s, fn={fn_description(self.f)}'
-
-    @property
-    def duration(self):
-        return self.end - self.start
-
-
 def sort_fn(invocation):
     return invocation.end - invocation.start
 
@@ -64,7 +47,7 @@ def sort_invocations_by_function_time(group):
 
 
 @log_call
-def group_by_function(invocations: List[Invocation]) -> Dict[object, List[Invocation]]:
+def group_by_function(invocations: List) -> Dict[object, List]:
     result = {}
     for invocation in invocations:
         f = invocation['f']
@@ -181,7 +164,6 @@ class Profiler:
         self.invocations = []
 
     def add_invocation(self, start, end, result, f):
-        # i = Invocation(start, end, result, f, args, kwargs)
         i = {'start': start, 'end': end, 'result': result, 'f': f}
         self.invocations.append(i)
 
