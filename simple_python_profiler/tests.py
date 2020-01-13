@@ -34,7 +34,6 @@ def go(a, b):
 
 
 if __name__ == '__main__':
-    with Profiler():
-        go(1, 2)
-        sub()
-        # go(1, 2)
+    go(1, 2)
+    sub()
+    # go(1, 2)
