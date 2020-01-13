@@ -8,6 +8,7 @@ author = "Jeshan G. BABOOA"
 author-email = "j@jeshan.co"
 home-page = "https://github.com/jeshan/simple-python-profiler"
 classifiers = ["License :: OSI Approved :: MIT License"]
+description-file = "README.md"
 requires = [
  "recursive-decorator >=1,<2",
  "loguru <1",
